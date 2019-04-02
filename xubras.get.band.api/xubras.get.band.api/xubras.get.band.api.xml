@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>xubras.get.band.api</name>
+    </assembly>
+    <members>
+        <member name="T:xubras.get.band.api.Controllers.FileController">
+            <summary>
+                Send or receive files
+            </summary>
+        </member>
+        <member name="M:xubras.get.band.api.Controllers.FileController.#ctor(Microsoft.Extensions.Options.IOptions{xubras.get.band.domain.Util.Configuration},xubras.get.band.data.Transactions.IUnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+            <param name="businessFileUpload"></param>
+        </member>
+        <member name="M:xubras.get.band.api.Controllers.FileController.File(xubras.get.band.domain.Models.General.FileParameters)">
+            <summary>
+                get files reference
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xubras.get.band.api.Controllers.FileController.FileDetail(xubras.get.band.domain.Models.General.FileParameters)">
+            <summary>
+                get file detail
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xubras.get.band.api.Controllers.FileController.FileDownload(xubras.get.band.domain.Models.General.FileParameters)">
+            <summary>
+                Rotina para obter os arquivos salvos no servidor
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xubras.get.band.api.Controllers.FileController.FileUpload(Microsoft.AspNetCore.Http.IFormFile,xubras.get.band.domain.Models.General.FileParameters)">
+            <summary>
+                Rotina de envio de arquivos para salvar no servidor verificando:
+                 - Caso haja restrição de extensões
+                 - O caminho(path) enviado
+                 - Validação da extensão de arquivo
+                 - Atribuição do arquivo em um stream e verifica se existe arquivo a ser enviado
+            </summary>
+            <param name="file"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xubras.get.band.api.Controllers.FileController.FileDelete(xubras.get.band.domain.Models.General.FileParameters)">
+            <summary>
+                Rotina para excluir o arquivo enviado ao servidor
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<globalizationDictionary culture="pt-BR">
+  <!--Test translate-->
+  <text name="testkey">Teste Chave</text>
+  <text name="testkey1">Teste Chave1</text>
+  <text name="testkey2">Teste Chave2</text>
+  <text name="testkey3">Teste Chave3</text>
+  <!--FileUpload-->
+  <text name="DirectoryNotExists">Não existe diretório.</text>
+  <text name="DirectoryOrFileNotExists">Diretório ou arquivo inexistentes.</text>
+  <text name="FileRemoved">Arquivo Removido.</text>
+  <text name="FileNotRemoved">Arquivo não removido.</text>
+  <text name="FileCreated">Arquivo salvo.</text>
+  <text name="FileNotContent">Nenhum arquivo encontrado. O arquivo pode ser nocivo ou está corrompido.</text>
+  <text name="FileExtensionInvalid">Extensão de arquivo inválida.</text>
+  
+</globalizationDictionary>

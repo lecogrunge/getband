@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<globalizationDictionary culture="en-US">
+  <!--Test translate-->
+  <text name="testkey">Key Test</text>
+  <text name="testkey1">Key Test1</text>
+  <text name="testkey2">Key Test2</text>
+  <text name="testkey3">Key Test3</text>
+  <!--FileUpload-->
+  <text name="DirectoryNotExists">There is no directory.</text>
+  <text name="DirectoryOrFileNotExists">Directory or file that does not exist.</text>
+  <text name="FileRemoved">File Removed.</text>
+  <text name="FileNotRemoved">File not removed.</text>
+  <text name="FileCreated">File saved.</text>
+  <text name="FileNotContent">No files found. The file may be corrupt or corrupt.</text>
+  <text name="FileExtensionInvalid">Invalid file extension.</text>
+</globalizationDictionary>

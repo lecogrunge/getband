@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<globalizationDictionary culture="pt-BR">
+  <!--FileUpload-->
+  <text name="DirectoryNotExists">Não existe diretório.</text>
+  <text name="DirectoryOrFileNotExists">Diretório ou arquivo inexistentes.</text>
+  <text name="FileRemoved">Arquivo Removido.</text>
+  <text name="FileNotRemoved">Arquivo não removido.</text>
+  <text name="FileCreated">Arquivo salvo.</text>
+  <text name="FileNotContent">Nenhum arquivo encontrado. O arquivo pode ser nocivo ou está corrompido.</text>
+  <text name="FileExtensionInvalid">Extensão de arquivo inválida.</text>
+  <text name="ErrorGeneric400">Houve um problema interno com o servidor. Entre em contato com o Administrador do sistema caso o problema persista. Erro interno:</text>
+</globalizationDictionary>
