@@ -1,6 +1,7 @@
 ﻿namespace xubras.get.band.domain.Domains.User
 {
     using System;
+    using xubras.get.band.domain.Util;
     using xubras.get.band.domain.ValueObjects;
 
     public class User
@@ -13,6 +14,8 @@
             NickName = nickName;
             Name = name;
             Password = password;
+            Active = false;
+            TokenConfirm = Guid.NewGuid();
         }
 
         public User(Email email, string password)
@@ -32,6 +35,14 @@
 
         public string NickName { get; private set; }
 
+        public Guid TokenConfirm { get; private set; }
+
+        public bool Active { get; private set; }
+
+        public void CryptPassword()
+        {
+            this.Password.Encrypt();
+        }
         
         //public string Phone { get; private set; }
 

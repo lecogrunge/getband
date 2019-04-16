@@ -256,7 +256,7 @@
             return strXml;
         }
 
-        private static string Encrypt(string plainText, string passPhrase)
+        public static string Encrypt(this string plainText, string passPhrase = null)
         {
             // Salt and IV is randomly generated each time, but is preprended to encrypted cipher text
             // so that the same Salt and IV values can be used when decrypting.  
@@ -293,7 +293,7 @@
             }
         }
 
-        private static string Decrypt(string cipherText, string passPhrase)
+        public static string Decrypt(this string cipherText, string passPhrase = null)
         {
             // Get the complete stream of bytes that represent:
             // [32 bytes of Salt] + [32 bytes of IV] + [n bytes of CipherText]

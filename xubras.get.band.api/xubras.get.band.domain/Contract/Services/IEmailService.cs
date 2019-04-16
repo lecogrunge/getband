@@ -1,7 +1,10 @@
-﻿namespace xubras.get.band.domain.Contract.Services
+﻿using System;
+using System.Threading.Tasks;
+
+namespace xubras.get.band.domain.Contract.Services
 {
     public interface IEmailService
     {
-        void SendEmail(string to, string subject, string body);
+        Task SendEmailCreateUser(string to, string name, Guid token);
     }
 }

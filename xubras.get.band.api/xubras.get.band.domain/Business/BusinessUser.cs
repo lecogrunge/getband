@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using xubras.get.band.data.Entities;
 using xubras.get.band.domain.Contract.Business;
 using xubras.get.band.domain.Contract.Repository;
+using xubras.get.band.domain.Contract.Repository.Base;
 using xubras.get.band.domain.Contract.Services;
 using xubras.get.band.domain.Domains.User;
 using xubras.get.band.domain.Domains.Validation;
@@ -17,15 +18,16 @@ namespace xubras.get.band.domain.Business
     public sealed class BusinessUser : IBusinessUser
     {
         #region [ Attributes ]
-        private readonly IUserSaveRepository _userRepository;
+        private readonly IUserSaveRepository _userSaveRepository;
+        private readonly IUserListRepository _userListRepository;
         private readonly IEmailService _emailService;
         private readonly Configuration _configuration;
         #endregion
 
         #region [ Constructor ]
-        public BusinessUser(IUserSaveRepository userRepository, IEmailService emailService, IOptions<Configuration> configuration)
+        public BusinessUser(IUserSaveRepository userSaveRepository, IUserListRepository userListRepository, IEmailService emailService, IOptions<Configuration> configuration)
         {
-            _userRepository = userRepository;
+            _userSaveRepository = userSaveRepository;
             _emailService = emailService;
             _configuration = configuration.Value;
         }
@@ -53,11 +55,13 @@ namespace xubras.get.band.domain.Business
             if (!response.IsValid())
                 return response;
 
+            user.CryptPassword();
+
             // Persistence
-            _userRepository.Add(new UserEntity { Name = request.Name, NickName = request.Nickname, Password = request.Password, Email = request.Email});
+            _userSaveRepository.Add(new UserEntity { Name = user.Name, NickName = user.NickName, Password = user.Password, Email = user.Email.EmailAddress});
 
             // Other Services
-            //_emailService.SendEmail(user.Email.EmailAddress, "my title", "my content");
+            _emailService.SendEmailCreateUser(user.Email.EmailAddress, user.Name, user.TokenConfirm);
 
             response.IdUser = user.IdUser;
             return response;
@@ -85,7 +89,7 @@ namespace xubras.get.band.domain.Business
                 return response;
 
             // Autenticando
-            //_userRepository.FindByConditionAync(s => s.Email.ToString().Trim().Equals(request.Email.);
+            _userListRepository.GetFirst(s => s.Email.ToString().Trim().Equals(request.Email));
 
             return response;
         }
